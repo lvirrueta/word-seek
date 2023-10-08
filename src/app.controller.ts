@@ -1,15 +1,16 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { IWordSearch } from './model/interface/i-word-seek';
+import { WordSearchDto } from './model/dto/word-seek.dto';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  public getHello(): any {
+  @Post()
+  public getHello(@Body() dto: WordSearchDto): any {
     console.clear();
-    return this.appService.resolveWordSearch(data);
+    return this.appService.resolveWordSearch(dto);
     return 'Searching...';
   }
 }
@@ -25,17 +26,17 @@ export class AppController {
 //   ],
 // };
 
-const data: IWordSearch = {
-  words2find: ['LEOPARDO', 'LEON', 'ELEFANTE', 'RATON'],
-  wordSearch: [
-    ['L', 'A', 'B', 'W', 'C', 'X', 'D', 'R'],
-    ['E', 'E', 'C', 'T', 'V', 'B', 'A', 'L'],
-    ['F', 'L', 'O', 'N', 'C', 'F', 'E', 'E'],
-    ['G', 'E', 'O', 'P', 'A', 'R', 'D', 'O'],
-    ['R', 'F', 'M', 'N', 'A', 'N', 'G', 'N'],
-    ['T', 'A', 'O', 'T', 'T', 'R', 'I', 'A'],
-    ['U', 'N', 'W', 'E', 'Z', 'I', 'D', 'D'],
-    ['Z', 'T', 'A', 'I', 'U', 'T', 'G', 'O'],
-    ['W', 'E', 'X', 'M', 'J', 'M', 'V', 'S'],
-  ],
-};
+// const data: IWordSearch = {
+//   words2find: ['LEOPARDO', 'LEON', 'ELEFANTE', 'RATON'],
+//   wordSearch: [
+//     ['L', 'A', 'B', 'W', 'C', 'X', 'D', 'R'],
+//     ['E', 'E', 'C', 'T', 'V', 'B', 'A', 'L'],
+//     ['F', 'L', 'O', 'N', 'C', 'F', 'E', 'E'],
+//     ['G', 'E', 'O', 'P', 'A', 'R', 'D', 'O'],
+//     ['R', 'F', 'M', 'N', 'A', 'N', 'G', 'N'],
+//     ['T', 'A', 'O', 'T', 'T', 'R', 'I', 'A'],
+//     ['U', 'N', 'W', 'E', 'Z', 'I', 'D', 'D'],
+//     ['Z', 'T', 'A', 'I', 'U', 'T', 'G', 'O'],
+//     ['W', 'E', 'X', 'M', 'J', 'M', 'V', 'S'],
+//   ],
+// };
