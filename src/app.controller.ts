@@ -14,26 +14,28 @@ export class AppController {
   }
 }
 
-const data: IWordSearch = {
-  words2find: ['LEON'],
-  wordSearch: [
-    ['W', 'A', 'O', 'W', 'N', 'X', 'L', 'R'],
-    ['E', 'W', 'E', 'O', 'N', 'B', 'R', 'A'],
-    ['F', 'W', 'Z', 'Y', 'Z', 'F', 'W', 'W'],
-  ],
-};
-
 // const data: IWordSearch = {
-//   words2find: ['LEOPARDO', 'LEON', 'ELEFANTE', 'RATON'],
+//   words2find: ['LEON'],
 //   wordSearch: [
-//     ['L', 'A', 'B', 'W', 'C', 'X', 'D', 'R'],
-//     ['E', 'E', 'C', 'T', 'V', 'B', 'A', 'L'],
-//     ['F', 'L', 'O', 'N', 'C', 'F', 'E', 'E'],
-//     ['G', 'E', 'O', 'P', 'A', 'R', 'D', 'O'],
-//     ['R', 'F', 'M', 'N', 'A', 'N', 'G', 'N'],
-//     ['T', 'A', 'O', 'T', 'T', 'R', 'I', 'A'],
-//     ['U', 'N', 'W', 'E', 'Z', 'I', 'D', 'D'],
-//     ['Z', 'T', 'A', 'I', 'U', 'T', 'G', 'O'],
-//     ['W', 'E', 'X', 'M', 'J', 'M', 'V', 'S'],
+//     /**        0    1    2    3    4    5    6    7*/
+//     /** 0 */ ['W', 'A', 'O', 'W', 'M', 'X', 'L', 'R'],
+//     /** 1 */ ['E', 'L', 'E', 'O', 'N', 'E', 'O', 'A'],
+//     /** 2 */ ['L', 'W', 'E', 'Y', 'N', 'F', 'W', 'W'],
+//     // /** 2 */ ['L', 'W', 'Z', 'Y', 'N', 'F', 'W', 'W'],
 //   ],
 // };
+
+const data: IWordSearch = {
+  words2find: ['LEOPARDO', 'LEON', 'ELEFANTE', 'RATON'],
+  wordSearch: [
+    ['L', 'A', 'B', 'W', 'C', 'X', 'D', 'R'],
+    ['E', 'E', 'C', 'T', 'V', 'B', 'A', 'L'],
+    ['F', 'L', 'O', 'N', 'C', 'F', 'E', 'E'],
+    ['G', 'E', 'O', 'P', 'A', 'R', 'D', 'O'],
+    ['R', 'F', 'M', 'N', 'A', 'N', 'G', 'N'],
+    ['T', 'A', 'O', 'T', 'T', 'R', 'I', 'A'],
+    ['U', 'N', 'W', 'E', 'Z', 'I', 'D', 'D'],
+    ['Z', 'T', 'A', 'I', 'U', 'T', 'G', 'O'],
+    ['W', 'E', 'X', 'M', 'J', 'M', 'V', 'S'],
+  ],
+};
