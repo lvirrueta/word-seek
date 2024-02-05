@@ -6,9 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./input-word-seek.component.scss'],
 })
 export class InputWordSeekComponent {
-  @Input() value=generateRandomWord();
-}
-
-const generateRandomWord = (): string => {
-  return String.fromCharCode(65+Math.floor(Math.random() * 26));
+  @Input() value!: string;
+  @Input() color!: string;
 }
