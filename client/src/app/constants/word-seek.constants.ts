@@ -58,6 +58,6 @@ export const word2Seek: IWord2Seek[] = [
   },
   {
     color: '#88AA66',
-    word: 'GUEPARDO',
+    word: 'AT',
   },
 ]

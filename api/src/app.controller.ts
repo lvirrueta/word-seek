@@ -10,6 +10,7 @@ export class AppController {
   @Post()
   public getHello(@Body() dto: WordSearchDto): any {
     console.clear();
+    console.log('=============== inicio ===============');
     return this.appService.resolveWordSearch(dto);
     return 'Searching...';
   }
