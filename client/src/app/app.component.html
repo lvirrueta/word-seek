@@ -51,19 +51,21 @@
 
 
     <!-- Word Seek -->
-    <table class="mx-auto">
-        <tr *ngFor="let row of wordSeek; index as r">
-            <td  *ngFor="let col of wordSeek[r]; index as c">
-                <!-- <p class="ms-3">{{r==0 ? c : ''}}</p> -->
-                <app-input-word-seek 
-                    [value] = col.letter
-                    [color] = col.color
-                    (changeValue) = changeValue($event,r,c)
-                ></app-input-word-seek>
-            </td>
-            <!-- <p>{{r}}</p> -->
-        </tr>
-    </table>
+    <div class="wordSeekBox">
+        <table class="mx-auto">
+            <tr *ngFor="let row of wordSeek; index as r">
+                <td  *ngFor="let col of wordSeek[r]; index as c">
+                    <!-- <p class="ms-3">{{r==0 ? c : ''}}</p> -->
+                    <app-input-word-seek 
+                        [value] = col.letter
+                        [color] = col.color
+                        (changeValue) = changeValue($event,r,c)
+                    ></app-input-word-seek>
+                </td>
+                <!-- <p>{{r}}</p> -->
+            </tr>
+        </table>
+    </div>
     <!-- END Word Seek -->
 
 
