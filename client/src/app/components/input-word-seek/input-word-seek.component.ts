@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input-word-seek',
@@ -8,4 +8,10 @@ import { Component, Input } from '@angular/core';
 export class InputWordSeekComponent {
   @Input() value!: string;
   @Input() color!: string;
+  @Output() changeValue = new EventEmitter<string>();
+
+  public change(event: Event): void {
+    const value = (event.target as HTMLInputElement)?.value;
+    this.changeValue.emit(value);
+  }
 }

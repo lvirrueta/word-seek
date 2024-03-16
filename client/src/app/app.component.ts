@@ -64,6 +64,10 @@ export class AppComponent implements OnInit {
 
   // ------------- Triggers --------------- //
 
+  public changeValue(value: string, r:number, c: number): void {
+    this.wordSeek[r][c].letter = value;
+  }
+
   public deleteWord({word}: IWord2Seek): void { 
     this.word2Seek = this.word2Seek.filter((e) => e.word !== word )
   }
