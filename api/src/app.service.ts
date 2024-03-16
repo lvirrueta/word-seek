@@ -35,7 +35,8 @@ export class AppService {
     const { location, word, wordSearch } = data;
     const { row, col } = location;
 
-    if (wordSearch[row][col] === word[0]) {
+    if (wordSearch[row][col].toLowerCase() === word[0].toLowerCase()) {
+      // return this.startSearching(data);
       const res = this.startSearching(data);
       // console.log('>>>>>>');
       // console.log(res);
@@ -105,7 +106,7 @@ export class AppService {
     if (res.length === word.length) {
       return {
         word,
-        resolution: res.reverse(),
+        solution: res.reverse(),
       };
     } else {
       return undefined;
@@ -123,8 +124,8 @@ export class AppService {
     const letters = [...word];
 
     let res: IWordResolution;
-    let locationArr: ILocationResolution[] = [{ location: { col, row }, uuid: null }];
-    const resArr: IWordResolution[] = [{ location: [{ location, uuid: null }], letter: word[0] }];
+    let locationArr: ILocationSolution[] = [{ location: { col, row }, uuid: null }];
+    const resArr: IWordResolution[] = [{ letter: word[0], location: [{ location, uuid: null }] }];
 
     letters.slice(1).every((letter) => {
       locationArr.forEach((loc) => {
@@ -133,7 +134,7 @@ export class AppService {
           location: { col: loc.location.col, row: loc.location.row },
         });
 
-        const locAdjUid: ILocationResolution[] = locAdj.map((locA) => {
+        const locAdjUid: ILocationSolution[] = locAdj.map((locA) => {
           return {
             location: locA,
             uuid: loc.uuid,
@@ -160,16 +161,16 @@ export class AppService {
   }
 
   /** Compare if the word exists in the adj zone */
-  private compareAdj(data: IComparison, locAdj: ILocationResolution[]): IWordResolution {
+  private compareAdj(data: IComparison, locAdj: ILocationSolution[]): IWordResolution {
     const { wordSearch, word } = data;
 
-    const wordResolution: ILocationResolution[] = [];
+    const wordResolution: ILocationSolution[] = [];
     // console.log(`Searching '${word}'`);
     locAdj.forEach((loc) => {
       const { location, uuid } = loc;
       const { col, row } = location;
 
-      if (wordSearch[row][col] === word) {
+      if (wordSearch[row][col].toLowerCase() === word.toLowerCase()) {
         wordResolution.push({
           location: { col, row },
           uuid: uuidv4(),
@@ -178,7 +179,7 @@ export class AppService {
       }
     });
 
-    return { location: wordResolution, letter: word };
+    return { letter: word, location: wordResolution };
   }
 
   /** setAdjRowCol creates an array of ILocation Adjacent to search */
@@ -212,7 +213,7 @@ interface IComparison {
   wordSearch: string[][];
 }
 
-interface ILocationResolution {
+interface ILocationSolution {
   uuid: string;
   uuidParent?: string;
   location: ILocation;
@@ -220,12 +221,12 @@ interface ILocationResolution {
 
 interface IWordResolution {
   letter: string;
-  location: ILocationResolution[];
+  location: ILocationSolution[];
 }
 
 interface IWordSolution {
   word: string;
-  resolution: IWordResolution[];
+  solution: IWordResolution[];
 }
 
 interface ILocation {
