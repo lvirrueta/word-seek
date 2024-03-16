@@ -10,17 +10,17 @@
                     <input class="py-1 px-2" type="color" name="favcolor" value="{{word.color}}" (change)="colorChange($event, word)">
                 </span>
             </div>
-            <input type="text" class="form-control" value={{word.word}}>
+            <input type="text" class="form-control" value={{word.word}} (change)="wordChange($event, word)">
             <button class="btn btn-danger" type="button" (click)="deleteWord(word)">Eliminar</button>
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">
-                    <input class="py-1 px-2" type="color" name="favcolor" value="#FF7300">
+                    <input class="py-1 px-2" type="color" [formControl]="formColor">
                 </span>
             </div>
-            <input type="text" class="form-control" #inputWord>
+            <input type="text" class="form-control" [formControl]="formWord">
             <button class="btn btn-primary" type="button" (click)="addWord()">Agregar</button>
         </div>
     </div>

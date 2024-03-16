@@ -4,6 +4,8 @@ import { IWord2Seek, IWordSeek } from './interface/word-seek.interface';
 import { WordSeekService } from './api/word-seek.service';
 import { WordSeekDto } from './api/wor-seek.dto';
 import { WordSeekAPI } from './api/word-seek.api';
+import { FormControl } from "@angular/forms";
+
 
 @Component({
   selector: 'app-root',
@@ -17,6 +19,8 @@ export class AppComponent implements OnInit {
   public title = 'word seek';
   public wordSeek!:IWordSeek[][];
   public word2Seek= word2Seek;
+  public formWord = new FormControl('');
+  public formColor = new FormControl('#FF7300');
   
   ngOnInit(): void {
     this.buildWordSeek();
@@ -73,11 +77,22 @@ export class AppComponent implements OnInit {
   }
 
   public addWord(): void {
+    const word = this.formWord.getRawValue() as string;
+    const color = this.formColor.getRawValue() as string;
+    if (!word.length) return;
+    this.word2Seek.push({ word, color });
+    // TODO: generate a method that can generate a hex color randomnly
+    this.formWord.setValue('');
   }
 
   public colorChange(e: Event, word: IWord2Seek): void {
     const target = e.target as unknown as HTMLInputElement;
     word.color = target.value;
+  }
+
+  public wordChange(e: Event, word: IWord2Seek): void {
+    const target = e.target as unknown as HTMLInputElement;
+    word.word = target.value;
   }
 
   public addCol(): void {
