@@ -57,7 +57,6 @@ export class AppComponent implements OnInit {
 
     resp.forEach((r)=> {
       const word = this.word2Seek.find((w) => w.word === r.word);
-      console.log(r)
       r.solution.forEach((res) => {
         res.location.map((resolution) => {
           const { col, row } = resolution.location;
@@ -82,8 +81,9 @@ export class AppComponent implements OnInit {
     const color = this.formColor.getRawValue() as string;
     if (!word.length) return;
     this.word2Seek.push({ word, color });
-    // TODO: generate a method that can generate a hex color randomnly
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
     this.formWord.setValue('');
+    this.formColor.setValue(`#${randomColor}`);
   }
 
   public colorChange(e: Event, word: IWord2Seek): void {
