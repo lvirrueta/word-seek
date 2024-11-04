@@ -1,34 +1,44 @@
-# Sopa de Letras
-## Descripción:
-Este proyecto es una aplicación que implementa un algoritmo capaz de resolver una sopa de letras en cualquier dirección. A diferencia de las sopas de letras convencionales que buscan palabras en direcciones específicas (vertical, horizontal o diagonal), este algoritmo localiza la primera letra y explora en todas las direcciones alrededor de ella para encontrar la palabra completa.
+*Read this in other languages: [English](README.md), [Español](README.es.md).*
 
-Aplicacion en produccion: [word-seek](https://word-seek.lvirrueta.dev)
+# Word Seek Puzzle
 
-## Tecnologías Usadas
+## Description:
+This project is an application implementing an algorithm that can solve a word search puzzle in any direction. Unlike conventional word searches, which find words in specific directions (vertical, horizontal, or diagonal), this algorithm locates the first letter and explores in all surrounding directions to find the entire word.
+
+You can try the application in production here: [word-seek](https://word-seek.lvirrueta.dev)
+
+## Technologies Used
 - Angular 15
 - Nodejs 18
 
-## Requisitos de Instalación
-Para ejecutar el proyecto en desarrollo, solo necesitas tener:
-- Node.js >= 18
+## Requirements
+To run this project, make sure you have the following versions installed:
 
-y ejecutar los siguientes comandos: 
+- Node.js >= 18
+- Angular >= 15
+
+## Installation
 ```sh
 npm i 
 ```
 
 ```sh
+ng serve
+```
+
+if you dont have angular: 
+```sh
 npm run start
 ```
 
-## Uso
-- Ingresa las palabras que deseas encontrar.
-- Configura el número de columnas y renglones aleatoriamente.
-- Haz clic en el botón "Resuelve".
-- La aplicación buscará y mostrará la solución automáticamente.
+## Usage
+- Enter the words you want to find.
+- Configure the number of columns and rows randomly.
+- Click the "Solve" button.
+- The application will automatically search for and display the solution.
 
-## Contribuciones
-Este proyecto fue desarrollado de forma individual y no está abierto a contribuciones externas en este momento.
+## Contributions
+This project was developed individually and is not open to external contributions at this time.
 
 ## Licencia
-Este proyecto no tiene una licencia asignada.
+This project does not have an assigned license.
