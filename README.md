@@ -1,27 +1,34 @@
-# Portfolio
+# Sopa de Letras
+## Descripción:
+Este proyecto es una aplicación que implementa un algoritmo capaz de resolver una sopa de letras en cualquier dirección. A diferencia de las sopas de letras convencionales que buscan palabras en direcciones específicas (vertical, horizontal o diagonal), este algoritmo localiza la primera letra y explora en todas las direcciones alrededor de ella para encontrar la palabra completa.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+Aplicacion en produccion: [word-seek](https://word-seek.lvirrueta.dev)
 
-## Development server
+## Tecnologías Usadas
+- Angular 15
+- Nodejs 18
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Requisitos de Instalación
+Para ejecutar el proyecto en desarrollo, solo necesitas tener:
+- Node.js >= 18
 
-## Code scaffolding
+y ejecutar los siguientes comandos: 
+```sh
+npm i 
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+npm run start
+```
 
-## Build
+## Uso
+- Ingresa las palabras que deseas encontrar.
+- Configura el número de columnas y renglones aleatoriamente.
+- Haz clic en el botón "Resuelve".
+- La aplicación buscará y mostrará la solución automáticamente.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Contribuciones
+Este proyecto fue desarrollado de forma individual y no está abierto a contribuciones externas en este momento.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Licencia
+Este proyecto no tiene una licencia asignada.
