@@ -11,7 +11,6 @@ import { WordSeekDto } from './wor-seek.dto';
 import { WordSeekAPI } from './word-seek.api';
 
 // Constants
-import { environment } from '../environments/environment';
 import { WordSearchDto } from './model/dto/word-seek.dto';
 
 @Injectable({
@@ -20,8 +19,6 @@ import { WordSearchDto } from './model/dto/word-seek.dto';
 export class WordSeekService {
   constructor( private http : HttpClient ) { 
   }
-
-  private url = environment.apiWordSeek;
 
   solveWordSeek(dto: WordSeekDto): Observable<WordSeekAPI[]> {
     const resp = this.resolveWordSearch(dto) as unknown as Observable<WordSeekAPI[]>;;
